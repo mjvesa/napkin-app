@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Napkin</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    ></meta>
+    <style>
+      body {
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      #preview {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      #cam-canvas {
+        width: 100%;
+      }
+
+      #content .layout {
+        border: 2px solid gray;
+      }
+
+      #content {
+        display: flex;
+      }
+
+      #content > div {
+        height: 100vh;
+        width: 100vw;
+      }
+
+      button {
+        width: 100vw;
+        font-size: 3vh;
+        flex-grow: 1;
+        flex-basis: auto;
+      }
+
+      img {
+        border-radius: 1rem;
+      }
+    </style>
+
+    <custom-style>
+      <style include="lumo-color lumo-typography"></style>
+    </custom-style>
+  </head>
+  <body>
+    <video autoplay style="display:none" width="640" height="640"></video>
+    <div id="device-list">
+    </div>
+    <canvas id="cam-canvas"></canvas>
+    <button id="reset">Generate view</button>
+    <button id="share-button">Share</button>
+    <div theme="dark" id="content"></div>
+<!--    <canvas id="result-image" width="640" height="640"></canvas> -->
+    <script src="bundle.js"></script>
+  </body>
+</html>
